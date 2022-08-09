@@ -26,3 +26,9 @@ if (promedio >= 6) {
 }else{
     alert ("la nota final es Desaprobado");
 }
+
+// Agrego un ARRAY // 
+
+const arrayPromedio = []; 
+arrayPromedio.unshift (parcial, final, promedio);
+console.log (arrayPromedio);
