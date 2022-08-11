@@ -32,3 +32,36 @@ if (promedio >= 6) {
 const arrayPromedio = []; 
 arrayPromedio.unshift (parcial, final, promedio);
 console.log (arrayPromedio);
+
+// Ahora que ya sabemos que se aprueba con 6, ver que alumnos aprobaron con un filtro // 
+
+const alumnos = [
+    {
+        nombre: 'Tomas',
+        nota: 6,
+    },
+    {
+        nombre: 'Juan',
+        nota: 4,
+    },
+    {
+        nombre: 'Andres',
+        nota: 8,
+    },
+    {
+        nombre: 'Mateo',
+        nota: 10,
+    },
+    {
+        nombre: 'Calvin',
+        nota: 7,
+    },
+    {
+        nombre: 'Alan',
+        nota: 2,
+    }
+]
+
+let aprobados = alumnos.filter (alumnos => alumnos.nota >= 6);
+
+console.log (aprobados)
