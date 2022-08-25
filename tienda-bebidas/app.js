@@ -1,40 +1,58 @@
 // tienda de bebidas, si tenes menos de 18, te salta un mensaje 
+localStorage.setItem ("nombre", "Tomas")
 
-let edad= (prompt("Ingrese su edad"));
+/* let edad= (prompt("Ingrese su edad"));
 
 if (edad <18) {
     document.getElementById("titulo").innerHTML = "Sos menor de edad"
     document.getElementById("menu").innerHTML = "No podes visitar la pagina"
-};
+}; */
+
+
+const nombre= localStorage.getItem("nombre");
+
+const spanNode = document.getElementById ("nombre");
+
+spanNode.innerHTML= hola; 
 
 const boton = document.getElementById("boton");
 
 const productos = [
     {
-        nombre: "fernet",
+        id: 1,
+        producto: "fernet",
         precio: 1000,
     },
     {
-        nombre: "cerveza",
+        producto: "cerveza",
         precio: 300,
     },
     {
-        nombre: "vino",
+        producto: "vino",
         precio: 600,
     },
     {
-        nombre: "gin",
+        producto: "gin",
         precio: 800,
     },
     {
-        nombre: "ron",
+        producto: "ron",
         precio: 1200,
     },
     {
-        nombre: "jagger",
+        producto: "jagger",
         precio: 3000,
     }
-]
+];
+
+const guardarLocal = (clave, valor) => {
+    localStorage.setItem(clave, valor);
+};
+
+for (const producto of productos) { 
+    guardarLocal (producto.id, JSON.stringify(producto));
+}
+
 
 const agregoProducto = () => {
     const indiceProducto = Math.round(Math.random());
@@ -48,3 +66,5 @@ const agregoProducto = () => {
     };
     
     boton.addEventListener("click", agregoProducto);
+
+
